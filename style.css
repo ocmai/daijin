@@ -54,6 +54,21 @@ h1:after{
   color: white;
 }
 
+.close_btn{
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #000000;
+  border: solid 2px #000000;
+  border-radius: 3px;
+  transition: .4s;
+}
+.close_btn:hover {
+  background: #000000;
+  color: white;
+}
+
+
 /*クイズ部分*/
 .quiz{
   position: relative;

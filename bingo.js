@@ -205,7 +205,7 @@ $(function() { //(1)
                   bingo6 ==1 || bingo7 ==1 || bingo8 == 1 || bingo9 == 1 || bingo10 ==1 ||
                   bingo11 ==1 || bingo12 ==1){
                     $('.popup').addClass('show').fadeIn();
-                    $('.btn').on('click',function(){
+                    $('.close_btn').on('click',function(){
                       $('.popup').fadeOut();
                     });
                   }
