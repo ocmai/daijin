@@ -1,0 +1,243 @@
+#contents {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+.elements {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+    margin: 5px;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    font-size: 16px;
+    border: solid 3px black;
+    border-radius: 5px;
+}
+
+h1{
+  position: relative;
+}
+
+h1:after{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 7px;
+  background: -webkit-repeating-linear-gradient(-45deg, #ff7f50, #ff7f50 2px, #fff 2px, #fff 4px);
+  background: repeating-linear-gradient(-45deg, #ff7f50, #ff7f50 2px, #fff 2px, #fff 4px);
+}
+
+/*確定ボタン*/
+.btn {
+  display: inline-block;
+  padding: 0.3em 1em;
+  text-decoration: none;
+  color: #000000;
+  border: solid 2px #000000;
+  border-radius: 3px;
+  transition: .4s;
+}
+
+.btn:hover {
+  background: #000000;
+  color: white;
+}
+
+
+.box {
+    padding: 10px;
+    margin: auto;
+    border: double 5px #ff7f50;
+    width: 150px;
+    left: 300px;
+    top: 300px;
+}
+.box p {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.selectbox{
+  float:right;
+  left: 350px;
+  top: 300px;
+}
+#daijin{
+}
+
+.balloon{
+  position:relative;
+  left:-200px;
+  bottom: 100px;
+  float: right;
+  display: inline-block;
+  margin: 20px;
+  padding: 15px;
+  background: #fffacd;
+  border-radius: 20px;
+}
+
+.balloon:before {
+  content: "";
+  position: absolute;
+  left: -38px;
+  width: 32px;
+  bottom: :0;
+  background: #fffacd;
+  border-radius: 50%;
+}
+.balloon:after {
+  content: "";
+  position: absolute;
+  left: -24px;
+  width: 20px;
+  height: 18px;
+  bottom: 3px;
+  background: #fffacd;
+  border-radius: 50%;
+}
+.balloon p {
+  margin: 0;
+  padding: 0;
+}
+
+/*ビンゴおめでとう画面*/
+.popup {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background: black;
+    position: fixed;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+}
+
+.content{
+    background: #fff;
+    padding: 30px;
+    width: 50%;
+    text-align: center;
+    border-radius: 80%;
+}
+.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/** 抽選分追加 */
+.odometer {
+  /*height: 1em;*/
+  text-shadow: 0 -1px rgba(0, 0, 0, 0.9);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 auto;
+  display: inline-block;
+  background: #404040;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  -moz-box-shadow: inset 0 2px 8px -2px #000;
+  -webkit-box-shadow: inset 0 2px 8px -2px #000;
+  box-shadow: inset 0 2px 8px -2px #000;
+}
+
+.digit {
+  font-size: 45px;
+  display: inline-block;
+  height: 0.9em;
+  width: 0.5em;
+  overflow: hidden;
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0 0.2em;
+}
+.digit:first-child {
+  border-left: none;
+}
+
+.digit-container {
+  line-height: 1em;
+  -webkit-animation: slide infinite linear;
+  animation: slide infinite linear;
+}
+
+.digit-one {
+  -webkit-animation-duration: 10ms;
+  animation-duration: 10ms;
+}
+
+.digit-ten {
+  -webkit-animation-duration: 50ms;
+  animation-duration: 50ms;
+}
+
+.digit-hundred {
+  -webkit-animation-duration: 250ms;
+  animation-duration: 250ms;
+}
+
+.digit-thousand {
+  -webkit-animation-duration: 1250ms;
+  animation-duration: 1250ms;
+}
+
+@-webkit-keyframes slide {
+  from {
+    -webkit-transform: translateY(-10em);
+  }
+  to {
+    -webkit-transform: translateY(0);
+  }
+}
+
+@keyframes slide {
+  from {
+    transform: translateY(-10em);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.Counter{
+  float:right;
+  margin: 0 auto;
+}
+
+.drawingContainer {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.separater {
+  line-height: 1em;
+  -webkit-animation: slide infinite linear;
+  animation: slide infinite linear;
+}
+
+.drawingCounter {
+  font-size: 28px;
+  margin: 20px;
+  color: rgba(64, 64, 64, 0.9);
+  line-height: 1em;
+  -webkit-animation: slide infinite linear;
+}
+
+#drawingBtn {
+  font-size: 28px;
+  color: #ffffff;
+  background-color: #ff7f50;
+  height: 56px;
+  width: 128px;
+  border-radius: 10px;
+  margin:10px 5px;
+}
+/** 抽選分追加はここまで */
