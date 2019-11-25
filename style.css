@@ -157,36 +157,17 @@ h1:after{
 
 
 .balloon{
-  position:relative;
-  left:-400px;
-  bottom: 100px;
+  left: 200px;
+  top:50px;
   float: right;
   display: inline-block;
   margin: 20px;
   padding: 15px;
-  background: #fffacd;
+  background: #fff;
   border-radius: 20px;
+  border: solid 2px #ff7f50;
 }
 
-.balloon:before {
-  content: "";
-  position: absolute;
-  left: -38px;
-  width: 32px;
-  bottom: :0;
-  background: #fffacd;
-  border-radius: 50%;
-}
-.balloon:after {
-  content: "";
-  position: absolute;
-  left: -24px;
-  width: 20px;
-  height: 18px;
-  bottom: 3px;
-  background: #fffacd;
-  border-radius: 50%;
-}
 .balloon p {
   margin: 0;
   padding: 0;
