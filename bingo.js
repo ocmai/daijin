@@ -87,8 +87,23 @@ $(document).ready(function(){
     var str = "daijin" + i;
     $('.' + str).text(sessionStorage.getItem(str));
   }
-
+  //吹き出しの非表示
   $('.balloon').hide();
+
+  //セレクトボックス作成
+  const selectItems = [];
+  var map = {};
+  for(const key in data){
+    selectItems.push((data[key].name))
+  }
+  for(var i=0; i<selectItems.length; i++){
+    var tmp = selectItems[i];
+    map[tmp] = 1
+  }
+  const selectList = Object.keys(map).map(function(data){
+    $('#daijin').append("<option value='"+data+"'>"+data+"</option>");
+  })
+  var totalPoint = 0;
 });
 
 // スロット定数
@@ -98,6 +113,7 @@ var drawingFlag = false;
 var drawingCount = 0;
 var coloringList = [];
 var bingoList =[];
+
 
 $(function() { //(1)
 
@@ -120,26 +136,51 @@ $(function() { //(1)
           tmpList.push(arrStr);
         }
         var daijin = a[0].name
-        //大臣の名前を表示
-        $('.result').text(daijin);
+        var totalPoint =Number($('.totalPoint').text());
+
+        //判定ボタンクリック初期化
+        var btnClickCount = 0;
+        console.log(btnClickCount);
+        //判定ボタンクリック
+        $('.btn').on('click',function(){
+          if(btnClickCount == 0){
+            btnClickCount=1;
+            var selectedItem = $('#daijin').val();
+            if(daijin == selectedItem){
+              //正解の処理
+              $('.result-name').text(daijin);
+              totalPoint = totalPoint +1
+              $('.totalPoint').text(totalPoint);
+            }else{
+              //不正解の処理
+              $('.result-name').text(daijin);
+            }
 
         //配列と比較する，既出情報取得
         for(var i=0; i<tmpList.length; i++){ //(4)パネル内の大臣リストをループ
           if(tmpList[i] == daijin){ //(5)
             var coloring = $('.' + 'daijin' +(i+1)).parent().css('background-color');
+            var point =Number($('.' + 'point' +(i+1)).text());
 
             if(coloring == "rgb(255, 127, 80)"){ //(6)
               //既出
               $('.balloon').show();
               $('.comment').text('もういるよ')
+              var point = point +1
+              totalPoint = totalPoint + point
+              $('.' + 'point' + (i+1)).text(point);
+              $('.totalPoint').text(totalPoint)
             }else{ //(6)
               //新出
               $('.balloon').show();
               $('.comment').text('大臣発見！')
               $('.'+ 'daijin'+(i+1)).parent().css('background-color','#ff7f50')
+              var point = point +1
+              totalPoint = totalPoint + point
+              $('.' + 'point' +(i+1)).text(point);
+              $('.totalPoint').text(totalPoint);
               var int = i+1
               coloringList.push(int);
-              console.log(coloringList);
 
               //ビンゴになっているかどうかを判定する
               //横
@@ -176,11 +217,18 @@ $(function() { //(1)
             $('.comment').text('ざんねん！')
           } //(5)
         } //(4)
-      	} //(3)
-    }); //(2)
+      }else{ //判定ボタン複数回連打時
+        //処理なし
+      }
+    });
+    } //(3)
+  }); //(2)
 
     setCounter(drawingCount);
 }); //(1)
+
+
+
 
 //指定の値が配列に含まれるかどうかを判定する
   const containsAll = function(needs,array){

@@ -114,7 +114,7 @@ $('.btn').click(function(){
   var map = {};
   for(var i=0; i<tmpList.length; i++){
     var tmp = tmpList[i];
-    map[tmp] = 1
+    map[tmp] = map[tmp] === undefined ? 1 : map[tmp] + 1;
   }
   if(Object.keys(map).length == 25){
     //sessionStorageへデータを保存する
@@ -127,7 +127,14 @@ $('.btn').click(function(){
     window.location.href = 'bingo.html';
 
   }else{
+
+    var error = new Array();
+    Object.keys(map).map(function(key){
+      if (map[key] !== 1) error.push(key);
+    });
+    
+
     //次の画面へ遷移させない
-    alert('選択された大臣に重複もしくは不足があります。\n修正してください。')
+    alert('選択された大臣に重複もしくは不足があります。\n修正してください。\n' + error.join('\n'))
   }
 });

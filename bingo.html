@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>だいじんびんご</title>
-  <link rel="stylesheet" type="text/css" href="teststyle.css">
-  <script src="http://creatornote.nakweb.com/wp-content/themes/giraffe/js/odometer.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
   <link href="https://creatornote.nakweb.com/wp-content/themes/giraffe/css/odometer-theme-default.css" rel="stylesheet" type="text/css" >
   <script src="https://code.jquery.com/jquery-2.0.0.js">
   <script src="https://creatornote.nakweb.com/wp-content/themes/giraffe/js/odometer.min.js" ></script>
@@ -12,146 +11,176 @@
 </head>
 
 <body>
-
-  <!-- ボタンイベント追加 -->
-  <div id="drawingDate" class="drawingContainer">
-    <div class="odometer">
-      <div class="digit">
-        <div class="digit-container" unit="thousand" id="yyyy-thousand">2</div>
+  <div id ="contents">
+    <div id="drawingDate" class="drawingContainer">
+      <div class="odometer">
+        <div class="digit">
+          <div class="digit-container" unit="thousand" id="yyyy-thousand">2</div>
+        </div>
+        <div class="digit">
+          <div class="digit-container" unit="hundred" id="yyyy-hundred">0</div>
+        </div>
+        <div class="digit">
+          <div class="digit-container" unit="ten" id="yyyy-ten">0</div>
+        </div>
+        <div class="digit">
+          <div class="digit-container" unit="one" id="yyyy-one">0</div>
+        </div>
+        <div class="digit">
+          <div class="separater">/</div>
+        </div>
+        <div class="digit">
+          <div class="digit-container" unit="ten" id="mm-ten">0</div>
+        </div>
+        <div class="digit">
+          <div class="digit-container" unit="one" id="mm-one">1</div>
+        </div>
+        <div class="digit">
+          <div class="separater">/</div>
+        </div>
+        <div class="digit">
+          <div class="digit-container" unit="ten" id="dd-ten">0</div>
+        </div>
+        <div class="digit">
+          <div class="digit-container" unit="one" id="dd-one">1</div>
+        </div>
       </div>
-      <div class="digit">
-        <div class="digit-container" unit="hundred" id="yyyy-hundred">0</div>
-      </div>
-      <div class="digit">
-        <div class="digit-container" unit="ten" id="yyyy-ten">0</div>
-      </div>
-      <div class="digit">
-        <div class="digit-container" unit="one" id="yyyy-one">0</div>
-      </div>
-      <div class="digit">
-        <div class="separater">/</div>
-      </div>
-      <div class="digit">
-        <div class="digit-container" unit="ten" id="mm-ten">0</div>
-      </div>
-      <div class="digit">
-        <div class="digit-container" unit="one" id="mm-one">1</div>
-      </div>
-      <div class="digit">
-        <div class="separater">/</div>
-      </div>
-      <div class="digit">
-        <div class="digit-container" unit="ten" id="dd-ten">0</div>
-      </div>
-      <div class="digit">
-        <div class="digit-container" unit="one" id="dd-one">1</div>
+      <div>
+        <button name="drawingBtn" id="drawingBtn" >START</button>
       </div>
     </div>
+    <div class ="quiz">
+      <span class="box-title">この日の在任者は誰？</span>
+      <select id="daijin"></select>
+      <button class="btn">判定</button>
+      <p class="text1">正解は</p>
+      <div class="box">
+        <p class="result-a"></p>
+        <p class="result-name"></p>
+      </div>
+    </div>
+    <div class="showPoint">
+      <p>total point:</p><p class="totalPoint">0</p><p>pt</p>
+    </div>
+
+    <!--<div class="balloon">
+      <p class="comment"></p>
+    </div>-->
     <p class="Counter">
       <label id="drawingCounter" class="drawingCounter">0回</label>
     </p>
-    <div>
-      <button name="drawingBtn" id="drawingBtn">START</button>
-    </div>
-  </div>
-    <div class="point">
-      <p class ="point"></p>
-    </div>
-    <div class="box">
-      <p class="result"></p>
-    </div>
-    <!--<div class="selectbox">
-      <select class="daijin"></select>
-    </div>-->
-    <div class="balloon">
-      <p class="comment"></p>
-    </div>
     <div class="popup">
       <div class="content">
        <p>ビンゴおめでとう！</p>
        <button class="btn">閉じる</button>
    </div>
-    </div>
+  </div>
+</div>
 
-
-  <!-- 終了-->
-
+<!--ビンゴシート-->
   <div id ="contents">
     <div class="elements">
       <p class="daijin1"></p>
+      <p class="point1">0</p>
     </div>
     <div class="elements">
       <p class="daijin2"></p>
+      <p class="point2">0</p>
     </div>
     <div class="elements">
       <p class="daijin3"></p>
+      <p class="point3">0</p>
     </div>
     <div class="elements">
       <p class="daijin4"></p>
+      <p class="point4">0</p>
     </div>
     <div class="elements">
       <p class="daijin5"></p>
+      <p class="point5">0</p>
     </div>
     <div class="elements">
       <p class="daijin6"></p>
+      <p class="point6">0</p>
     </div>
     <div class="elements">
       <p class="daijin7"></p>
+      <p class="point7">0</p>
     </div>
     <div class="elements">
       <p class="daijin8"></p>
+      <p class="point8">0</p>
     </div>
     <div class="elements">
       <p class="daijin9"></p>
+      <p class="point9">0</p>
     </div>
     <div class="elements">
       <p class="daijin10"></p>
+      <p class="point10">0</p>
     </div>
     <div class="elements">
       <p class="daijin11"></p>
+      <p class="point11">0</p>
     </div>
     <div class="elements">
       <p class="daijin12"></p>
+      <p class="point12">0</p>
     </div>
     <div class="elements">
       <p class="daijin13"></p>
+      <p class="point13">0</p>
     </div>
     <div class="elements">
       <p class="daijin14"></p>
+      <p class="point14">0</p>
     </div>
     <div class="elements">
       <p class="daijin15"></p>
+      <p class="point15">0</p>
     </div>
     <div class="elements">
       <p class="daijin16"></p>
+      <p class="point16">0</p>
     </div>
     <div class="elements">
       <p class="daijin17"></p>
+      <p class="point17">0</p>
     </div>
     <div class="elements">
       <p class="daijin18"></p>
+      <p class="point18">0</p>
     </div>
     <div class="elements">
       <p class="daijin19"></p>
+      <p class="point19">0</p>
     </div>
     <div class="elements">
       <p class="daijin20"></p>
+      <p class="point20">0</p>
     </div>
     <div class="elements">
       <p class="daijin21"></p>
+      <p class="point21">0</p>
     </div>
     <div class="elements">
       <p class="daijin22"></p>
+      <p class="point22">0</p>
     </div>
     <div class="elements">
       <p class="daijin23"></p>
+      <p class="point23">0</p>
     </div>
     <div class="elements">
       <p class="daijin24"></p>
+      <p class="point24">0</p>
     </div>
     <div class="elements">
       <p class="daijin25"></p>
+      <p class="point25">0
+      </p>
     </div>
   </div>
+</div>
 </body>
 </html>
