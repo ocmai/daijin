@@ -1,5 +1,5 @@
 #contents {
-    position: relative;
+    /*position: relative;*/
     max-width: 640px;
     top:20px;
     left:80px;
@@ -9,6 +9,7 @@
     float: left;
     background-color: #fff7ef;
     border-radius: 8px;
+    z-index: 2;
 }
 /*各ビンゴのパネル*/
 .elements {
@@ -187,6 +188,7 @@ h1:after{
     opacity: 0.9;
     top: 0;
     left: 0;
+    z-index: 10;
 }
 
 .content{
