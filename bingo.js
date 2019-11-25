@@ -87,8 +87,6 @@ $(document).ready(function(){
     var str = "daijin" + i;
     $('.' + str).text(sessionStorage.getItem(str));
   }
-  //吹き出しの非表示
-  $('.balloon').hide();
 
   //セレクトボックス作成
   const selectItems = [];
